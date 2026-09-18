@@ -16,4 +16,19 @@ public class RegisterResponse {
         this.createdAt = createdAt;
     }
 
+    public UUID getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return this.createdAt;
+    }
 }
