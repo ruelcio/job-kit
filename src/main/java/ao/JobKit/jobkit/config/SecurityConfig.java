@@ -12,8 +12,15 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfig {
     
     @Bean
-    public SecurityFilterChain  securityFilterChain(HttpSecurity http) throws Exception {
-        return http.csrf(csrf -> csrf.disable()).authorizeHttpRequests(auth -> auth.requestMatchers("/api/v1/auth/register").permitAll()).build();
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        return http
+            .csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/v1/auth/register").permitAll()
+                .requestMatchers("/api/v1/health").permitAll()
+                .requestMatchers("/api/v1/quick-answers").permitAll()
+            )
+            .build();
     }
 
     @Bean

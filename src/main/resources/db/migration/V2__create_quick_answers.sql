@@ -1,0 +1,9 @@
+CREATE TABLE quick_answers (
+    id UUID PRIMARY KEY,
+    user_id UUID,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    question VARCHAR(500) NOT NULL,
+    content VARCHAR(500) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
